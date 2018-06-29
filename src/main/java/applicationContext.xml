@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--<context:annotation-config/>
+
+    <bean name="category" class="com.xznn.bean.Category">
+        <property name="name" value="TV"/>
+    </bean>
+
+    <bean name="product" class="com.xznn.bean.Product">
+        <property name="name" value="TCL"/>
+        &lt;!&ndash;<property name="category" ref="category"/>&ndash;&gt;
+    </bean>-->
+
+    <context:component-scan base-package="com.xznn.bean"/>
+
+
+    <!--<bean name="productService" class="com.xznn.bean.ProductService"/>
+    <bean id="loggerAspect" class="com.xznn.aop.LoggerAspect"/>
+    <aop:config>
+        &lt;!&ndash; 指定 核心业务功能 &ndash;&gt;
+        <aop:pointcut id="loggerCutpoint" expression="execution(* com.xznn.bean.ProductService.*(..)) "/>
+
+        &lt;!&ndash; 指定 辅助功能&ndash;&gt;
+        <aop:aspect id="logAspect" ref="loggerAspect">
+            <aop:around pointcut-ref="loggerCutpoint" method="log"/>
+        </aop:aspect>
+    </aop:config>-->
+
+    <context:component-scan base-package="com.xznn.aop"/>
+    <aop:aspectj-autoproxy/>
+
+
+</beans>
